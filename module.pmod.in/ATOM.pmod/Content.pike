@@ -3,11 +3,10 @@ import Public.Parser;
 import Standards;
 
 //! An ATOM.Conent object.
-
-static URI _uri;
-static string _type;
-static XML2.Node _inline;
-static string _raw;
+ URI _uri;
+ string _type;
+ XML2.Node _inline;
+ string _raw;
 
 //! Create an ATOM.Content object.
 //!
@@ -49,11 +48,11 @@ void create(void|XML2.Node node) {
 	_type = type;
 	_raw = node->get_text();
       }
-      if (has_suffix(type, "+xml") || has_suffix(type, "/xml")) {
+      else if (has_suffix(type, "+xml") || has_suffix(type, "/xml")) {
 	_type = type;
 	_inline = node->children()[0]; // THis might be wrong, but a valid XML document should only have one root node.
       }
-      if (!catch(string tmp = MIME.decode_base64(node->get_text()))) {
+      else if (!catch(string tmp = MIME.decode_base64(node->get_text()))) {
 	_type = type;
 	_raw = tmp;
       }

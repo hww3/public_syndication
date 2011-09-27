@@ -40,7 +40,8 @@ int main(int argc, array(string) argv)
   m->set_auth(user, password);
   m->add_new_version(module, version, changes, license);
   m->set_dependency(module, version, "Pike", "7.6.0", "7.9.999", 1);
-  m->set_dependency(module, version, "Public.Parser.XML2", "1.0", "1.75", 1);
+  m->set_dependency(module, version, "Public.Parser.XML2", "1.18", "1.75", 1);
+  m->set_dependency(module, version, "Public.Standards.RFC3339", "1.0", "1.75", 1);
   m->set_module_source(module, version, replace(module, ".", "_") + "-" + version + ".tar.gz");
 
   return 0;

@@ -9,10 +9,12 @@ import Standards;
 //!
 
 #if !constant(Public.Standards.RFC3339)
-throw(({"Public.Syndication.ATOM required Public.Standards.RFC3339\n", backtrace()}));
-#endif
-
-static Calendar.Second _t;
+static void create(mixed ... args)
+{
+throw(Error.Generic("Public.Syndication.ATOM requires Public.Standards.RFC3339\n"));
+}
+#else
+Calendar.Second _t;
 
 //! create a new RFC3339 instance.
 //!
@@ -59,5 +61,4 @@ Calendar.Second calendar(void|Calendar.Second __t) {
   return _t;
 }
 
-
-
+#endif

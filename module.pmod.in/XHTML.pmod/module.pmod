@@ -13,6 +13,5 @@ constant CONTENT_TYPE = "text/html";
 constant XMLNS = "http://www.w3.org/1999/xhtml";
 constant MAJOR = 1;
 constant MINOR = 1;
-constant TEST = #string "test.xml";
 
 #endif
