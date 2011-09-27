@@ -1,3 +1,5 @@
-Changes in version 1.0
+Version 1.0
 
 - Combined existing Public.Web.RSS module with James Harton's ATOM parser.
+- Added support for some additional RSS element types
+- Fixed a few bugs in the ATOM parser that prevented it from compiling properly.
