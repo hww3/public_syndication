@@ -1,4 +1,7 @@
-Version 1.0
+Version 1.2
+- Removed some xml files that were causing document extraction to fail.
+
+Version 1.1
 - Fix autodoc markup.
 - Fix for running when the prerequisites have not been installed (graceful abort).
 
