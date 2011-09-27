@@ -95,3 +95,20 @@ import Public.Parser.XML2;
     if(handle_ns_element_callback) handle_ns_element_callback(ns, element->get_node_name(), element, this);
   }
 
+
+  void parse_source(Node xml, string version)
+  {
+    mapping d = ([]);
+
+    d->url = xml->get_attributes()->url;
+    d->name = get_element_text(xml);
+
+    if(!d->url || !d->name)
+       error("source missing required attributes\n");
+
+    if(! data->source)
+      data->source = ({});
+
+    data->source += ({ d });
+  }
+

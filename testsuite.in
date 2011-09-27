@@ -1,3 +1,86 @@
   test_true(objectp(Public.Syndication.RSS))
   test_true(objectp(Public.Syndication.ATOM))
 
+  test_true(objectp(Public.Syndication.RSS.parse(
+#"<?xml version=\"1.0\" encoding=\"US-ASCII\"?>
+<!--
+Description:  XML-declaration-charset with charset US-ASCII
+Message:      valid
+Author:       Validome Team <rss@validome.org>
+Copyright:    2006 - www.validome.org
+-->
+<rss version=\"0.92\">
+  <channel>
+    <title>this is the title</title>
+    <link>http://www.validome.org/0.92</link>
+    <description>this is the description</description>
+    <language>en-us</language>
+    <copyright>All rights reserved</copyright>
+    <managingEditor>foo@foo.foo</managingEditor>
+    <webMaster>foo@foo.foo</webMaster>
+    <rating>rating</rating>
+    <pubDate>Fri, 30 Jul 1999 07:00:00 +0200</pubDate>
+    <lastBuildDate>Fri, 30 Jul 1999 07:00:00 +0200</lastBuildDate>
+    <docs>http://www.validome.org/0.92/docs</docs>
+    <cloud domain=\"127.0.0.1\" port=\"80\" path=\"/RPC2\" registerProcedure=\"ourFavoriteSongs.rssPleaseNotify\" protocol=\"xml-rpc\"/>
+    <image>
+      <title>this is the title</title>
+      <link>http://www.validome.org/0.92</link>
+      <description>this is the description</description>
+      <url>http://www.validome.org/image.gif</url>
+      <width>144</width>
+      <height>400</height>
+    </image>
+    <textInput>
+      <title>this is the title</title>
+      <link>http://www.validome.org/0.92</link>
+      <description>this is the description</description>
+      <name>test name</name>
+    </textInput>
+    <skipDays>
+      <day>Wednesday</day>
+      <day>Saturday</day>
+      <day>Monday</day>
+      <day>Tuesday</day>
+      <day>Sunday</day>
+      <day>Friday</day>
+      <day>Thursday</day>
+    </skipDays>
+    <skipHours>
+      <hour>1</hour>
+      <hour>2</hour>
+      <hour>3</hour>
+      <hour>4</hour>
+      <hour>5</hour>
+      <hour>6</hour>
+      <hour>7</hour>
+      <hour>8</hour>
+      <hour>9</hour>
+      <hour>10</hour>
+      <hour>11</hour>
+      <hour>12</hour>
+      <hour>13</hour>
+      <hour>14</hour>
+      <hour>15</hour>
+      <hour>16</hour>
+      <hour>17</hour>
+      <hour>18</hour>
+      <hour>19</hour>
+      <hour>20</hour>
+      <hour>21</hour>
+      <hour>22</hour>
+      <hour>23</hour>
+      <hour>24</hour>
+    </skipHours>
+    <item>
+      <title>this is the title</title>
+      <link>http://www.validome.org/0.92/item1</link>
+      <description>this is the description</description>
+      <enclosure url=\"http://www.validome.org/mp3s/test.mp3\" length=\"123456\" type=\"audio/mpeg\" />
+      <source url=\"http://www.validome.org/xml/scriptingNews.xml\">Scripting News</source>
+      <category domain=\"http://www.validome.org/\">category/subcategory/subcategory2</category>
+    </item>
+  </channel>
+</rss>"
+
+)));

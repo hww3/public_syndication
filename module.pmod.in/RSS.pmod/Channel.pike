@@ -7,8 +7,8 @@ import ".";
   string type = "Channel";
 
   multiset element_required_elements = (<"title", "link", "description">);
-  multiset element_subelements = (<"title", "link", "description", 
-                                   "image", "cloud", "category", "item">);
+  multiset element_subelements = (<"title", "link", "description", "source",
+                                   "image", "cloud", "category", "item", "language", "copyright">);
 
 //!
   array(Item) items = ({});
@@ -19,7 +19,7 @@ import ".";
       element_required_elements += (< "items">);
       element_subelements += (< "items", "textinput">);
     }
-    else if(_version=="2.0") {
+    else if(_version=="2.0" || _version=="0.92") {
       element_subelements += (< "item", "lastBuildDate", "lastBuildDate",
 				   "managingEditor", "copyright",
 				   "lastBuildDate", "language", "pubDate",
@@ -27,7 +27,7 @@ import ".";
 				   "rating", "textInput", "skipHours",
                                    "skipDays", "webMaster" >);
     }
-    else if(_version=="0.91") element_subelements += (< "item" >);
+    else if(_version=="0.91") element_subelements += (< "item", "language" >);
 
     // next, we should look for channels.
     foreach(xml->children(); int index; Node child)
@@ -55,18 +55,16 @@ import ".";
     mapping d = ([]);
 
     multiset required_elements = (<"title", "description", "name", "link">);
-    
     foreach(xml->children() || ({}); int index; Node child)
     {
-
-       if(child && child->get_node_type() == 1 && required_elements[child->get_node_name()])
-         d[child->get_node_name()] = get_element_text(xml);
-
-       if(!(d->link && d->name && d->description && d->title))
-       {
-          error("textInput missing required elements.\n");
-       } 
+       if(child && child->get_node_type() == Public.Parser.XML2.Constants.ELEMENT_NODE && required_elements[child->get_node_name()])
+         d[child->get_node_name()] = get_element_text(child);
     }
+    if(!(d->link && d->name && d->description && d->title))
+    {
+       error("textInput missing required elements\n");
+    } 
+
     if(! data->textInput)
       data->textInput = ({});
 
@@ -101,6 +99,11 @@ import ".";
 
   void parse_image(Node xml, string version)
   {
+  }
+
+  void parse_language(Node xml, string version)
+  {
+    data->language = get_element_text(xml);
   }
 
   void parse_cloud(Node xml, string version)

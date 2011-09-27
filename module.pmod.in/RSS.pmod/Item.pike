@@ -7,7 +7,7 @@ import ".";
 
   string type = "Item";
   multiset element_subelements = (<"enclosure", "category", "guid",
-                                   "title", "link", "author", 
+                                   "title", "link", "author", "source",
                                    "pubDate", "comments", "description">);
 
   string render()
