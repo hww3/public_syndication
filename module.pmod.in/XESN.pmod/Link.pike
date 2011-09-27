@@ -1,4 +1,4 @@
-import Public.Web;
+import Public.Syndication;
 import Public.Parser;
 import Standards;
 
@@ -204,7 +204,7 @@ XML2.Node render(void|XML2.Node node) {
 
 //!
 int `==(mixed test) {
-  if ((object_program(test) == Public.Web.XESN.Link) &&
+  if ((object_program(test) == Public.Syndication.XESN.Link) &&
       href() == test->href())
     return 1;
 }
@@ -217,11 +217,11 @@ int `!=(mixed test) {
 //!
 static string _sprintf() {
   if (is_peer()) {
-    return sprintf("Public.Web.XESN.Link(/* Peer:%O */)", (string)href());
+    return sprintf("Public.Syndication.XESN.Link(/* Peer:%O */)", (string)href());
   }
   else if (is_avatar()) {
-    return sprintf("Public.Web.XESN.Link(/* Avatar:%O */)", (string)href());
+    return sprintf("Public.Syndication.XESN.Link(/* Avatar:%O */)", (string)href());
   }
   else
-    return "Public.Web.XESN.Link(/* Broken Link Element */)";
+    return "Public.Syndication.XESN.Link(/* Broken Link Element */)";
 }

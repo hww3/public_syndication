@@ -1,4 +1,4 @@
-import Public.Web;
+import Public.Syndication;
 import Public.Parser;
 import Standards;
 
@@ -61,7 +61,7 @@ XML2.Node render(void|XML2.Node node) {
 
 //!
 int `==(mixed test) {
-  if ((object_program(test) == Public.Web.XESN.Description) &&
+  if ((object_program(test) == Public.Syndication.XESN.Description) &&
       contents() == test->contents())
     return 1;
 }
@@ -73,5 +73,5 @@ int `!=(mixed test) {
 
 //!
 static string _sprintf() {
-  return sprintf("Public.Web.XESN.Description(/* %O */)", contents());
+  return sprintf("Public.Syndication.XESN.Description(/* %O */)", contents());
 }

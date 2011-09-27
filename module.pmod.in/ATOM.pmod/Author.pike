@@ -1,4 +1,4 @@
-import Public.Web;
+import Public.Syndication;
 import Public.Parser;
 import Standards;
 
@@ -20,7 +20,7 @@ void create(void|XML2.Node node) {
       if ((n->get_ns() == ATOM.XMLNS) &&
 	  (n->get_node_name() == "name")) {
 	_name = n->get_text();
-#if constant(Public.Web.XESN)
+#if constant(Public.Syndication.XESN)
       }
       if ((n->get_ns() == XESN.XMLNS) &&
 	  (n->get_node_name() == "alias")) {
@@ -68,13 +68,13 @@ string name(void|string __name) {
 //! Get or set any XESN elements on the Author.
 //!
 //! @note
-//!   requires Public.Web.XESN module to work.
+//!   requires Public.Syndication.XESN module to work.
 //!
 //! @param __xesn
 //!   an array containing XESN elements.
 //!
 void|array xesn(void|array __xesn) {
-#if constant(Public.Web.XESN)
+#if constant(Public.Syndication.XESN)
   if (__xesn)
     _xesn = __xesn;
 #endif
@@ -104,7 +104,7 @@ XML2.Node render(void|XML2.Node node) {
   node->set_ns(ATOM.XMLNS);
   node->new_child("atom", "name", name())
     ->set_ns(ATOM.XMLNS);
-#if constant(Public.Web.XESN)
+#if constant(Public.Syndication.XESN)
   if (xesn()) {
     catch(node->get_root_node()->add_ns(XESN.XMLNS, "xesn"));
     foreach(xesn(), object x)
@@ -116,7 +116,7 @@ XML2.Node render(void|XML2.Node node) {
 
 //!
 int `==(mixed test) {
-  if ((object_program(test) == Public.Web.ATOM.Author) &&
+  if ((object_program(test) == Public.Syndication.ATOM.Author) &&
       name() == test->name())
     return 1;
 }
@@ -128,5 +128,5 @@ int `!=(mixed test) {
 
 //!
 static string _sprintf() {
-  return sprintf("Public.Web.ATOM.Author(/* %O */)", name());
+  return sprintf("Public.Syndication.ATOM.Author(/* %O */)", name());
 }

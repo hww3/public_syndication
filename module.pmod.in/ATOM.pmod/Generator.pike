@@ -1,12 +1,12 @@
-import Public.Web;
+import Public.Syndication;
 import Public.Parser;
 import Standards;
 
 //! An ATOM Generator element.
 
-static void|URI _uri = URI("http://modules.gotpike.org/blahblah/Public.Web.ATOM");
+static void|URI _uri = URI("http://modules.gotpike.org/blahblah/Public.Syndication.ATOM");
 static string _version = sprintf("%d.%d", ATOM.MAJOR, ATOM.MINOR);
-static string _contents = sprintf("Public.Web.ATOM (%s)", predef::version());
+static string _contents = sprintf("Public.Syndication.ATOM (%s)", predef::version());
 
 //! Create an ATOM Generator element.
 //!
@@ -95,7 +95,7 @@ XML2.Node render(void|XML2.Node node) {
 
 //!
 int `==(mixed test) {
-  if ((object_program(test) == Public.Web.ATOM.Generator) &&
+  if ((object_program(test) == Public.Syndication.ATOM.Generator) &&
       contents() == test->contents())
     return 1;
 }
@@ -107,5 +107,5 @@ int `!=(mixed test) {
 
 //!
 static string _sprintf() {
-  return sprintf("Public.Web.ATOM.Generator(/* %O */)", contents());
+  return sprintf("Public.Syndication.ATOM.Generator(/* %O */)", contents());
 }

@@ -1,4 +1,4 @@
-import Public.Web;
+import Public.Syndication;
 import Public.Parser;
 import Standards;
 
@@ -170,7 +170,7 @@ XML2.Node render(void|XML2.Node node) {
 
 //!
 int `==(mixed test) {
-  if ((object_program(test) == Public.Web.ATOM.Link) &&
+  if ((object_program(test) == Public.Syndication.ATOM.Link) &&
       href() == test->href())
     return 1;
 }
@@ -182,5 +182,5 @@ int `!=(mixed test) {
 
 //!
 static string _sprintf() {
-  return sprintf("Public.Web.ATOM.Link(/* %O */)", (string)href());
+  return sprintf("Public.Syndication.ATOM.Link(/* %O */)", (string)href());
 }

@@ -1,4 +1,4 @@
-import Public.Web;
+import Public.Syndication;
 import Public.Parser;
 import Standards;
 
@@ -123,7 +123,7 @@ XML2.Node render(void|XML2.Node node) {
 
 //!
 int `==(mixed test) {
-  if ((object_program(test) == Public.Web.ATOM.Source) &&
+  if ((object_program(test) == Public.Syndication.ATOM.Source) &&
       id() == test->id())
     return 1;
 }
@@ -135,5 +135,5 @@ int `!=(mixed test) {
 
 //!
 static string _sprintf() {
-  return sprintf("Public.Web.ATOM.Source(/* %O */)", id());
+  return sprintf("Public.Syndication.ATOM.Source(/* %O */)", id());
 }

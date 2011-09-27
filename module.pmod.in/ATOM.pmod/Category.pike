@@ -1,4 +1,4 @@
-import Public.Web;
+import Public.Syndication;
 import Public.Parser;
 import Standards;
 
@@ -97,7 +97,7 @@ XML2.Node render(void|XML2.Node node) {
 
 //!
 int `==(mixed test) {
-  if ((object_program(test) == Public.Web.ATOM.Category) &&
+  if ((object_program(test) == Public.Syndication.ATOM.Category) &&
       term() == test->term())
     return 1;
 }
@@ -109,5 +109,5 @@ int `!=(mixed test) {
 
 //!
 static string _sprintf() {
-  return sprintf("Public.Web.ATOM.Category(/* %O */)", term());
+  return sprintf("Public.Syndication.ATOM.Category(/* %O */)", term());
 }

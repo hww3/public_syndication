@@ -1,5 +1,5 @@
 import Public.Parser;
-import Public.Web;
+import Public.Syndication;
 import Standards;
 
 //! An ATOM Feed element.
@@ -462,7 +462,7 @@ XML2.Node render(void|XML2.Node node) {
 
 //!
 int `==(mixed test) {
-  if ((object_program(test) == Public.Web.ATOM.Feed) &&
+  if ((object_program(test) == Public.Syndication.ATOM.Feed) &&
       id() == test->id())
     return 1;
 }
@@ -474,5 +474,5 @@ int `!=(mixed test) {
 
 //!
 static string _sprintf() {
-  return sprintf("Public.Web.ATOM.Feed(/* %O, %O */)", title()->contents(), (string)id());
+  return sprintf("Public.Syndication.ATOM.Feed(/* %O, %O */)", title()->contents(), (string)id());
 }

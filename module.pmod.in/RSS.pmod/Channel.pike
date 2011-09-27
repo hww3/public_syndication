@@ -134,7 +134,7 @@ import ".";
 
  void handle_ns_element_callback(string ns, string element, Node data, object thing)
  {
-   function f = Public.Web.RSS.get_ns_channel_handler(ns, element);
+   function f = Public.Syndication.RSS.get_ns_channel_handler(ns, element);
 
    if(f) f(ns, element, data, thing);
  }

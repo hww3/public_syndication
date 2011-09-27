@@ -1,6 +1,6 @@
 //! Some constants for XHTML 1.1.  Just for consistencies sake really.
 //!
-//! This module is depended upon by Public.Web.ATOM if any XHTML elements are found.
+//! This module is depended upon by Public.Syndication.ATOM if any XHTML elements are found.
 //!
 
 #if !constant(Public.Parser.XML2)

@@ -1,6 +1,3 @@
-constant __author = "Bill Welliver <hww3@riverweb.com>";
-constant __version = "1.0";
-
 //! This is a parser for RSS files. Versions 0.92, 1.0 and 2.0 are 
 //! supported.
 

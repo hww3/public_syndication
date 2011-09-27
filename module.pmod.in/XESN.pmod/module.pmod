@@ -1,6 +1,6 @@
 //! This module implements extra Atom (or RSS) elements inside the XESN namespace.
 //!
-//! This module is called by Public.Web.ATOM if any XESN elements are found.
+//! This module is called by Public.Syndication.ATOM if any XESN elements are found.
 //!
 
 #if !constant(Public.Parser.XML2)

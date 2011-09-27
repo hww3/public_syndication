@@ -1,4 +1,4 @@
-import Public.Web;
+import Public.Syndication;
 import Public.Parser;
 import Standards;
 
@@ -9,7 +9,7 @@ import Standards;
 //!
 
 #if !constant(Public.Standards.RFC3339)
-throw(({"Public.Web.ATOM required Public.Standards.RFC3339\n", backtrace()}));
+throw(({"Public.Syndication.ATOM required Public.Standards.RFC3339\n", backtrace()}));
 #endif
 
 static Calendar.Second _t;

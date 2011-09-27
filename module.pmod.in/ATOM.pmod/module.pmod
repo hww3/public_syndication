@@ -5,8 +5,8 @@ constant __version = "0.1";
 
 #if !constant(Public.Parser.XML2)
 throw(({ "This module depends on Public.Parser.XMl2, please install it with monger.\nCheck http://module.gotpike.org/ for more information.\n\n", backtrace() }));
-#elif !constant(Public.Web.XHTML)
-throw(({ "This module depends on Public.Web.XHTML, please install it with monger.\nCheck http://module.gotpike.org/ for more information.\n\n", backtrace() }));
+#elif !constant(Public.Syndication.XHTML)
+throw(({ "This module depends on Public.Syndication.XHTML, please install it with monger.\nCheck http://module.gotpike.org/ for more information.\n\n", backtrace() }));
 #else
 
 import Public.Parser;
@@ -41,7 +41,7 @@ static int _redirect_count;
 //!   a Standards.URI object containing the URI of the Atom feed.
 //!
 //! @param feed_callback
-//!   a function(void|Public.Web.ATOM.Feed|Public.Web.Atom.Entry atom) callback.
+//!   a function(void|Public.Syndication.ATOM.Feed|Public.Syndication.Atom.Entry atom) callback.
 //!
 //! @param heads
 //!   any extra headers to be passed to the remote web server.
