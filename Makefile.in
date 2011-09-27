@@ -60,14 +60,12 @@ pmar:  verify
 	rm -rf ${MODULE_DIR_NAME}-1.${MIN}
 
 release: verify
-	cvs rtag -D now RELEASE_1_${MIN} pike_modules/${MODULE_DIR_NAME}
-	${MAKE} pmar RELEASE=${MIN}
-	cvs export -d ${MODULE_DIR_NAME}-1.${MIN} -r RELEASE_1_${MIN} pike_modules/${MODULE_DIR_NAME}
-	cd ${MODULE_DIR_NAME}-1.${MIN} && \
+	hg tag -d now RELEASE_1.${MIN}
+	hg archive -r RELEASE_1.${MIN} Public_Syndication-1.${MIN}
+	cd Public_Syndication-1.${MIN} && \
 	pike -x module --autoheader && pike -x module --autoconf && \
 	rm -rf autom4*
-	cp *.c ${MODULE_DIR_NAME}-1.${MIN}
-	gtar czvf ${MODULE_DIR_NAME}-1.${MIN}.tar.gz  ${MODULE_DIR_NAME}-1.${MIN}
-	rm -rf ${MODULE_DIR_NAME}-1.${MIN}
+	gtar czvf Public_Syndication-1.${MIN}.tar.gz Public_Syndication-1.${MIN}
+	rm -rf Public_Syndication-1.${MIN}
 	pike upload_module_version.pike ${MODULE_NAME} 1.${MIN} "${MODULE_LICENSE}"
         
