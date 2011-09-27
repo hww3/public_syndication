@@ -1,0 +1,3 @@
+  test_true(objectp(Public.Syndication.RSS))
+  test_true(objectp(Public.Syndication.ATOM))
+

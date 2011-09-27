@@ -1,3 +1,17 @@
-This is a pike module, which can be installed using the following command:
+This module provides a parser for RSS 0.92, 1.0 and 2.0 as well as ATOM. It 
+currently parses but does not allow for creation and subsequent generation
+of feeds (yet).
 
-pike -x module && pike -x module install
+BUILDING
+
+To build this module, perform the following steps:
+
+0. Install the libxml2 library (http://xmlsoft.org).
+1. Install the Public.Parser.XML2 module
+    pike -x monger --install Public.Parser.XML2
+2. Install this module
+    pike -x module
+    pike -x module install
+
+Usage examples are found in the examples directory.
+
