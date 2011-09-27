@@ -16,6 +16,5 @@ constant CONTENT_TYPE = "application/atom+xml";
 constant XMLNS = "http://helicopter.geek.nz/xesn";
 constant MAJOR = 0;
 constant MINOR = 1;
-constant TEST = #string "test.xml";
 
 #endif

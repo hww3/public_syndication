@@ -18,7 +18,6 @@ constant CONTENT_TYPE = "application/atom+xml";
 constant XMLNS = "http://www.w3.org/2005/Atom";
 constant MAJOR = 0;
 constant MINOR = 1;
-constant TEST = #string "test.xml";
 
 static int _redirect_count;
 
