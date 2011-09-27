@@ -1,4 +1,8 @@
 Version 1.0
+- Fix autodoc markup.
+- Fix for running when the prerequisites have not been installed (graceful abort).
+
+Version 1.0
 
 - Combined existing Public.Web.RSS module with James Harton's ATOM parser.
 - Added support for some additional RSS element types
