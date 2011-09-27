@@ -61,7 +61,7 @@ pmar:  verify
 
 release: verify
 	hg tag -d now RELEASE_1.${MIN}
-        hg push
+	hg push
 	hg archive -r RELEASE_1.${MIN} Public_Syndication-1.${MIN}
 	cd Public_Syndication-1.${MIN} && \
 	pike -x module --autoheader && pike -x module --autoconf && \
@@ -69,4 +69,4 @@ release: verify
 	gtar czvf Public_Syndication-1.${MIN}.tar.gz Public_Syndication-1.${MIN}
 	rm -rf Public_Syndication-1.${MIN}
 	pike upload_module_version.pike ${MODULE_NAME} 1.${MIN} "${MODULE_LICENSE}"
-        
+
