@@ -41,4 +41,4 @@ modref.xml: plib/autodoc.xml $(SYSTEM_DOC_PATH)/src/structure/modref.xml
 module_modref.xml: plib/autodoc.xml $(SYSTEM_DOC_PATH)/src/structure/module_modref.xml
 	  $(RUNPIKE) -x assemble_autodoc $(SYSTEM_DOC_PATH)/src/structure/module_modref.xml \
 	  plib/autodoc.xml >plib/module_modref.xml
-	
+

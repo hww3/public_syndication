@@ -4,7 +4,10 @@
 //!
 
 #if !constant(Public.Parser.XML2)
-throw(({ "This module depends on Public.Parser.XMl2, please install it with monger.\nCheck http://module.gotpike.org/ for more information.\n\n", backtrace() }));
+static void create(mixed ... args)
+{
+  throw(Error.Generic("This module depends on Public.Parser.XMl2, please install it with monger.\nCheck http://module.gotpike.org/ for more information.\n\n"));
+}
 #else
 
 import Public.Parser;

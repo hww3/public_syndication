@@ -4,9 +4,10 @@ constant __version = "0.1";
 //! Parser and renderer for W3C Atom 1.0 feeds.
 
 #if !constant(Public.Parser.XML2)
-throw(({ "This module depends on Public.Parser.XMl2, please install it with monger.\nCheck http://module.gotpike.org/ for more information.\n\n", backtrace() }));
-#elif !constant(Public.Syndication.XHTML)
-throw(({ "This module depends on Public.Syndication.XHTML, please install it with monger.\nCheck http://module.gotpike.org/ for more information.\n\n", backtrace() }));
+static void create(mixed ... args)
+{
+  throw(Error.Generic( "This module depends on Public.Parser.XML2, please install it with monger.\nCheck http://module.gotpike.org/ for more information.\n\n"));
+}
 #else
 
 import Public.Parser;

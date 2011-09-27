@@ -114,7 +114,7 @@ URI id(void|URI __id) {
 //! @param __updated
 //!   an RFC3339 object.
 //!
-//! @notes
+//! @note
 //!   this is a required property.
 //! 
 //! @returns
@@ -160,7 +160,7 @@ int rm_author(.Author a) {
 //! @returns
 //!   an array(ATOM.Author).
 //!
-//! @notes
+//! @note
 //!   this is a recommended property.
 //! 
 array authors() {
@@ -175,7 +175,7 @@ array authors() {
 //! @returns
 //!   an ATOM.Content element.
 //!
-//! @notes
+//! @note
 //!   this is a recommended property.
 //! 
 void|.Content content(void|.Content __content) {
@@ -216,7 +216,7 @@ int rm_link(.Link l) {
 //! @returns
 //!   an array(ATOM.Link).
 //!
-//! @notes
+//! @note
 //!   this is a recommended property.
 //! 
 array links() {
@@ -231,7 +231,7 @@ array links() {
 //! @returns
 //!   an ATOM.HRText instance containing the summary of this Entry.
 //!
-//! @notes
+//! @note
 //!   this is a recommended property.
 //! 
 void|.HRText summary(void|.HRText __summary) {

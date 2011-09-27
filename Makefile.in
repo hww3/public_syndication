@@ -18,7 +18,7 @@ MODNAME=Syndication
 
 # used by the module repository to scan for autodocs. should be the 
 # list of non pike files containing autodoc markup (ie cmod or c files). 
-AUTODOC_SRC_IN=module.pmod.in
+AUTODOC_SRC_IN=
 
 # the module name note that there is no error checking, so all of these
 # related variables should agree.
