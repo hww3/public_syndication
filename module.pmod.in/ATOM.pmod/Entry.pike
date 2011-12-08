@@ -24,8 +24,9 @@ static .HRText _rights;
 //!   an XML2.Node to parse as an Entry.
 //!
 void create(void|XML2.Node node) {
-  if (node &&
-      (node->get_ns() == ATOM.XMLNS) &&
+  if (node)
+  {
+    if(node->get_ns() == ATOM.XMLNS) &&
       (node->get_node_name() == "entry")) {
     foreach(node->children(), object n) {
       if (n->get_ns() == ATOM.XMLNS)
@@ -67,10 +68,12 @@ void create(void|XML2.Node node) {
 	    _rights = .HRText(n);
 	  break;
 	}
+      }
     }
+    else
+     throw(({ sprintf("XML2.Node %O is not an ATOM entry", node), backtrace() }));
+
   }
-  else
-    throw(({ sprintf("XML2.Node %O is not an ATOM entry", node), backtrace() }));
 }
 
 /* Required elements */
