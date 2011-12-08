@@ -24,8 +24,9 @@ static array _entries = ({});
 //!   an XML2.Node to parse as a Feed.
 //!
 void create(void|XML2.Node node) {
-  if (node &&
-      (node->get_ns() == ATOM.XMLNS) &&
+  if (node)
+  {
+   if((node->get_ns() == ATOM.XMLNS) &&
       (node->get_node_name() == "feed")) {
     // We have to presume it's an ATOM feed.
     foreach(node->children(), object n) {
@@ -74,6 +75,7 @@ void create(void|XML2.Node node) {
   }
   else
     throw(({ sprintf("XML2.Node %O is not an ATOM feed", node), backtrace() }));
+  }
 }
 
 /* Required elements */
@@ -474,5 +476,6 @@ int `!=(mixed test) {
 
 //!
 static string _sprintf() {
-  return sprintf("Public.Syndication.ATOM.Feed(/* %O, %O */)", title()->contents(), (string)id());
+
+  return sprintf("Public.Syndication.ATOM.Feed(/* %O, %O */)", (title()?title()->contents():""), (string)id());
 }
