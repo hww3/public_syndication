@@ -1,3 +1,6 @@
+Version 1.3
+- Fix a bug that prevents empty feeds from being generated.
+
 Version 1.2
 - Removed some xml files that were causing document extraction to fail.
 
