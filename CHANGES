@@ -1,4 +1,4 @@
-Version 1.3
+Version 1.4
 - Fixed a bug that prevented categories from being added to an entry.
 - Fix bugs that prevent empty feeds and entries from being generated.
 
