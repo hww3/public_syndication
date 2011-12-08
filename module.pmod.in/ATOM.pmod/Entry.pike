@@ -11,7 +11,7 @@ static array _authors = ({});
 static .Content _content;
 static array _links = ({});
 static .HRText _summary;
-static array _categories;
+static array _categories = ({});
 static array _contributors;
 static .RFC3339 _published;
 static .Source _source;
@@ -26,7 +26,7 @@ static .HRText _rights;
 void create(void|XML2.Node node) {
   if (node)
   {
-    if(node->get_ns() == ATOM.XMLNS) &&
+    if((node->get_ns() == ATOM.XMLNS) &&
       (node->get_node_name() == "entry")) {
     foreach(node->children(), object n) {
       if (n->get_ns() == ATOM.XMLNS)
@@ -71,8 +71,7 @@ void create(void|XML2.Node node) {
       }
     }
     else
-     throw(({ sprintf("XML2.Node %O is not an ATOM entry", node), backtrace() }));
-
+     throw(Error.Generic( sprintf("XML2.Node %O is not an ATOM entry", node)));
   }
 }
 
