@@ -21,9 +21,11 @@ Calendar.Second _t;
 //! @param text
 //!   an RFC3339 date and time string to parse.
 //!
-void create(void|string text) {
-  if (text)
+void create(void|string|object text) {
+  if (stringp(text))
     parse(text);
+  else if(objectp(text))
+    _t = text->second();
 }
 
 //! parse an RFC3339 date and time string.
