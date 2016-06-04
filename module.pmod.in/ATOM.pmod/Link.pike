@@ -4,12 +4,12 @@ import Standards;
 
 //! An ATOM.Link element.
 
-static URI _href;
-static string|Standards.URI _rel;
-static string _type;
-static string _hreflang;
-static string _title;
-static int _length;
+protected URI _href;
+protected string|Standards.URI _rel;
+protected string _type;
+protected string _hreflang;
+protected string _title;
+protected int _length;
 
 //! Create an ATOM Link element.
 //!
@@ -181,6 +181,6 @@ int `!=(mixed test) {
 }
 
 //!
-static string _sprintf() {
+protected string _sprintf() {
   return sprintf("Public.Syndication.ATOM.Link(/* %O */)", (string)href());
 }

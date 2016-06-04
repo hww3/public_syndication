@@ -4,9 +4,9 @@ import Standards;
 
 //! An ATOM.Category
 
-static string _term;
-static URI _scheme;
-static string _label;
+protected string _term;
+protected URI _scheme;
+protected string _label;
 
 //! Create an ATOM.Category element.
 //!
@@ -108,6 +108,6 @@ int `!=(mixed test) {
 }
 
 //!
-static string _sprintf() {
+protected string _sprintf() {
   return sprintf("Public.Syndication.ATOM.Category(/* %O */)", term());
 }

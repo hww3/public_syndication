@@ -2,8 +2,8 @@ import Public.Syndication;
 import Public.Parser;
 import Standards;
 
-static string _name;
-static array _xesn;
+protected string _name;
+protected array _xesn;
 
 // An ATOM Contributor element.
 
@@ -126,6 +126,6 @@ int `!=(mixed test) {
 }
 
 //!
-static string _sprintf() {
+protected string _sprintf() {
   return sprintf("Public.Syndication.ATOM.Contributor(/* %O */)", name());
 }

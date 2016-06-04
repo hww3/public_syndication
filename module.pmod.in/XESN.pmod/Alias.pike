@@ -4,7 +4,7 @@ import Standards;
 
 //! An XESN Alias element.
 
-static string _contents;
+protected string _contents;
 
 //! Construct either a blank Alias element or parse one.
 //! 
@@ -71,6 +71,6 @@ int `!=(mixed test) {
 }
 
 //!
-static string _sprintf() {
+protected string _sprintf() {
   return sprintf("Public.Syndication.XESN.Alias(/* %O */)", contents());
 }

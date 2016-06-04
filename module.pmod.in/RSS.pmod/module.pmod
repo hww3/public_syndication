@@ -4,8 +4,8 @@
 import Public.Parser.XML2;
 constant V10_NS = "http://purl.org/rss/1.0/";
 
-static mapping ns_channel_handlers = ([]);
-static mapping ns_item_handlers = ([]);
+protected mapping ns_channel_handlers = ([]);
+protected mapping ns_item_handlers = ([]);
 
 //!
 .Channel parse(string xml)

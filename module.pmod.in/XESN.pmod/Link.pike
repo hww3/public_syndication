@@ -4,12 +4,12 @@ import Standards;
 
 //! An XESN Link element.
 
-static URI _href;
-static array _rel;
-static string _type;
-static string _discovery;
-static int _is_peer;
-static int _is_avatar;
+protected URI _href;
+protected array _rel;
+protected string _type;
+protected string _discovery;
+protected int _is_peer;
+protected int _is_avatar;
 
 //! Allowed rel values.
 constant REL_PEER = ({ "peer", "contact", "acquaintance", "friend", "met", "co-worker", "colleague", "co-resident", "neighbor", "child", "parent", "sibling", "spouse", "kin", "muse", "crush", "date", "sweetheart", "me" });
@@ -215,7 +215,7 @@ int `!=(mixed test) {
 }
 
 //!
-static string _sprintf() {
+protected string _sprintf() {
   if (is_peer()) {
     return sprintf("Public.Syndication.XESN.Link(/* Peer:%O */)", (string)href());
   }

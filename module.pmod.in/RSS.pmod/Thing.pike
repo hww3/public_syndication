@@ -7,10 +7,10 @@ import Public.Parser.XML2;
  
   string RSS_VER_CORE;
 
-  static string type = "Thing";
+  protected string type = "Thing";
 
-  static multiset element_required_elements = (<>);
-  static multiset element_subelements = (<>);
+  protected multiset element_required_elements = (<>);
+  protected multiset element_subelements = (<>);
 
 //!
   mapping data=([]);
@@ -86,7 +86,7 @@ import Public.Parser.XML2;
        error("Incomplete " + type + " definition: missing " + ((array)(element_required_elements)*" ") + "\n");
   }
 
-  static void handle_ns_element(Node element, string ns, string version)
+  protected void handle_ns_element(Node element, string ns, string version)
   {
     if(!data[ns])
      data[ns] = ([element->get_node_name(): element]);

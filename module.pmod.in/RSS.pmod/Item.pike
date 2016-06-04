@@ -79,7 +79,7 @@ import ".";
       return "<link>" + data->link + "</link>";
   }
 
-  static void create(void|Node xml, void|string version)
+  protected void create(void|Node xml, void|string version)
   {
     ::create(xml, version);
 

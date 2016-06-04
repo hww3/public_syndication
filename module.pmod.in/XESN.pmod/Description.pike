@@ -4,7 +4,7 @@ import Standards;
 
 //! An XESN Description element.
 
-static string _contents;
+protected string _contents;
 
 
 //! Construct either a blank Description element or parse one.
@@ -72,6 +72,6 @@ int `!=(mixed test) {
 }
 
 //!
-static string _sprintf() {
+protected string _sprintf() {
   return sprintf("Public.Syndication.XESN.Description(/* %O */)", contents());
 }

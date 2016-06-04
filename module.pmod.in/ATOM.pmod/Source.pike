@@ -4,10 +4,10 @@ import Standards;
 
 //! An ATOM Source element.
 
-static URI _id;
-static .HRText _title;
-static .RFC3339 _updated;
-static .HRText _rights;
+protected URI _id;
+protected .HRText _title;
+protected .RFC3339 _updated;
+protected .HRText _rights;
 
 //! Create an ATOM Source element.
 //!
@@ -134,6 +134,6 @@ int `!=(mixed test) {
 }
 
 //!
-static string _sprintf() {
+protected string _sprintf() {
   return sprintf("Public.Syndication.ATOM.Source(/* %O */)", id());
 }

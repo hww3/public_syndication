@@ -4,7 +4,7 @@ constant __version = "0.1";
 //! Parser and renderer for W3C Atom 1.0 feeds.
 
 #if !constant(Public.Parser.XML2)
-static void create(mixed ... args)
+protected void create(mixed ... args)
 {
   throw(Error.Generic( "This module depends on Public.Parser.XML2, please install it with monger.\nCheck http://module.gotpike.org/ for more information.\n\n"));
 }
@@ -19,7 +19,7 @@ constant XMLNS = "http://www.w3.org/2005/Atom";
 constant MAJOR = 0;
 constant MINOR = 1;
 
-static int _redirect_count;
+protected int _redirect_count;
 
 //! Parse an ATOM feed from an XML string.
 //!
@@ -63,7 +63,7 @@ void fetch_atom_http(URI uri, function feed_callback, void|mapping heads) {
 }
 
 //!
-static void http_ok(HTTP.Query query, function feed_callback, mapping heads) {
+protected void http_ok(HTTP.Query query, function feed_callback, mapping heads) {
   write("status = %O\n", query->status);
   if ((query->status == 302) && (_redirect_count < 15)) {
     // Redirect.
@@ -85,7 +85,7 @@ static void http_ok(HTTP.Query query, function feed_callback, mapping heads) {
 }
 
 //!
-static void http_fail(HTTP.Query query, function feed_callback, mapping heads) {
+protected void http_fail(HTTP.Query query, function feed_callback, mapping heads) {
   if ((query->status == 302) && (_redirect_count < 15)) {
     // Redirect.
     if (query->headers["set-cookie"])

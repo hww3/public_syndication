@@ -9,7 +9,7 @@ import Standards;
 //!
 
 #if !constant(Public.Standards.RFC3339)
-static void create(mixed ... args)
+protected void create(mixed ... args)
 {
 throw(Error.Generic("Public.Syndication.ATOM requires Public.Standards.RFC3339\n"));
 }

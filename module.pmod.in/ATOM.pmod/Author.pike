@@ -4,8 +4,8 @@ import Standards;
 
 //! An ATOM.Author.
 
-static string _name;
-static array _xesn;
+protected string _name;
+protected array _xesn;
 
 //! Construct either a blank Author element or parse one.
 //! 
@@ -127,6 +127,6 @@ int `!=(mixed test) {
 }
 
 //!
-static string _sprintf() {
+protected string _sprintf() {
   return sprintf("Public.Syndication.ATOM.Author(/* %O */)", name());
 }

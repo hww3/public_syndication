@@ -8,10 +8,10 @@ constant TEXT_PLAIN = 1;
 constant TEXT_HTML = 2;
 constant TEXT_XHTML = 3;
 
-static int _type;
-static string|XML2.Node _text;
-static string _xhtmlns = "http://www.w3.org/1999/xhtml";
-static string _tag_name;
+protected int _type;
+protected string|XML2.Node _text;
+protected string _xhtmlns = "http://www.w3.org/1999/xhtml";
+protected string _tag_name;
 
 //! Create an ATOM human readable text element.
 //!

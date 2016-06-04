@@ -4,9 +4,9 @@ import Standards;
 
 //! An ATOM Generator element.
 
-static void|URI _uri = URI("http://modules.gotpike.org/blahblah/Public.Syndication.ATOM");
-static string _version = sprintf("%d.%d", ATOM.MAJOR, ATOM.MINOR);
-static string _contents = sprintf("Public.Syndication.ATOM (%s)", predef::version());
+protected void|URI _uri = URI("http://modules.gotpike.org/blahblah/Public.Syndication.ATOM");
+protected string _version = sprintf("%d.%d", ATOM.MAJOR, ATOM.MINOR);
+protected string _contents = sprintf("Public.Syndication.ATOM (%s)", predef::version());
 
 //! Create an ATOM Generator element.
 //!
@@ -106,6 +106,6 @@ int `!=(mixed test) {
 }
 
 //!
-static string _sprintf() {
+protected string _sprintf() {
   return sprintf("Public.Syndication.ATOM.Generator(/* %O */)", contents());
 }

@@ -4,18 +4,18 @@ import Standards;
 
 //! An ATOM Entry element.
 
-static URI _id;
-static .HRText _title;
-static .RFC3339 _updated;
-static array _authors = ({});
-static .Content _content;
-static array _links = ({});
-static .HRText _summary;
-static array _categories = ({});
-static array _contributors;
-static .RFC3339 _published;
-static .Source _source;
-static .HRText _rights;
+protected URI _id;
+protected .HRText _title;
+protected .RFC3339 _updated;
+protected array _authors = ({});
+protected .Content _content;
+protected array _links = ({});
+protected .HRText _summary;
+protected array _categories = ({});
+protected array _contributors;
+protected .RFC3339 _published;
+protected .Source _source;
+protected .HRText _rights;
 
 
 //! Create an ATOM Entry element.
@@ -427,6 +427,6 @@ int `!=(mixed test) {
 }
 
 //!
-static string _sprintf() {
+protected string _sprintf() {
   return sprintf("Public.Syndication.ATOM.Feed(/* %O, %O */)", title()->contents(), (string)id());
 }
