@@ -1,3 +1,6 @@
+Version 1.5
+- static keyword is now protected, fixes warnings and verification
+
 Version 1.4
 - Fixed a bug that prevented categories from being added to an entry.
 - Fix bugs that prevent empty feeds and entries from being generated.
